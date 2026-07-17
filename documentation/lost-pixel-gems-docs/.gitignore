@@ -1,0 +1,17 @@
+# never commit private data
+*.db
+*.sqlite
+.env
+.env.*
+**/secrets*
+**/*.key
+node_modules/
+# heavy binaries live outside git (see docs/ASSETS.md)
+*.glb
+*.vox
+*.zip
+assets/houses/
+assets/vox/houses/
+uploaded-site/
+_backup*/
+.DS_Store
