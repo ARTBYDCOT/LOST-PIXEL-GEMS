@@ -36,7 +36,8 @@ This repository is the **open-source reference** — every app, page, the smart-
 ## Table of contents
 - [**GENESIS — the illustrated publication**](GENESIS.md) · [**Manifesto & vision**](documentation/lost-pixel-gems-docs/docs/02-conceptos/MANIFESTO.md) · [**R3 — origin**](documentation/lost-pixel-gems-docs/docs/02-conceptos/ORIGIN.md)
 - [Vision](#vision) · [Architecture](documentation/lost-pixel-gems-docs/docs/02-conceptos/ARCHITECTURE.md) · [The apps & pages](documentation/lost-pixel-gems-docs/docs/02-conceptos/APPS.md)
-- [**Creation tools** (free — edit & animate)](documentation/lost-pixel-gems-docs/docs/01-guias/TOOLS.md) · [**Functions, limits & comparison**](documentation/lost-pixel-gems-docs/docs/02-conceptos/COMPARISON.md) · [**Public math & code**](documentation/lost-pixel-gems-docs/docs/02-conceptos/TECHNICAL.md)
+- [**🌐 Web3 Protocol & How to Participate**](WEB3-PROTOCOL.md) · [**Creation tools** (free — edit & animate)](documentation/lost-pixel-gems-docs/docs/01-guias/TOOLS.md)
+- [**Functions, limits & comparison**](documentation/lost-pixel-gems-docs/docs/02-conceptos/COMPARISON.md) · [**Public math & code**](documentation/lost-pixel-gems-docs/docs/02-conceptos/TECHNICAL.md)
 - [Economic model (deflationary PIXELS burn)](documentation/lost-pixel-gems-docs/docs/02-conceptos/ECONOMY.md) · [**Collections: distribution, launch & burns**](documentation/lost-pixel-gems-docs/docs/01-guias/DISTRIBUTION.md)
 - [Smart contracts](documentation/lost-pixel-gems-docs/docs/02-conceptos/CONTRACTS.md) · [Contributing & audits](CONTRIBUTING.md)
 - [Run it locally](#run-it-locally) · [Deploy](#deploy) · [License](#license)
