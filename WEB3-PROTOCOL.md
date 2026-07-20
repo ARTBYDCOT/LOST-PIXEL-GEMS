@@ -12,7 +12,7 @@
 
 | Contract | Address | Standard | Role |
 |---|---|---|---|
-| **LPG-MAIN-ASSETS** (`LPGMA`) | [`0x0e8d7fe83d4a1bc1fcb812862af28227abb9e138`](https://etherscan.io/address/0x0e8d7fe83d4a1bc1fcb812862af28227abb9e138) | ERC-721 | Fully on-chain voxel NFTs. The model's `.vox` bytes + name + size live on-chain; `tokenURI` renders an on-chain **SVG image** + a self-contained **interactive HTML** animation. |
+| **LPG-MAIN-ASSETS** (`LPGMA`) | [`0xa0795E3665552A1ea784e8e0d465A6E65455b51B`](https://etherscan.io/address/0xa0795E3665552A1ea784e8e0d465A6E65455b51B) | ERC-721 | Fully on-chain voxel NFTs. The model's `.vox` bytes + name + size live on-chain; `tokenURI` renders an on-chain **SVG image** + a self-contained **interactive HTML** animation. |
 | **VOXEL MAP · Genesis Map 1** | [`0x513493926EedeE69B6a8d65a1068CFa87855dad3`](https://etherscan.io/address/0x513493926EedeE69B6a8d65a1068CFa87855dad3) | Protocol | The public map, stored 100% on-chain. Each **unique cell** holds an owner + position + rotation + the voxel bytes. The website rebuilds the world by reading this contract. |
 | **PIXELS** (LPGR token #2) | [`0x6912dfdb9cff40a20fd1c297374bcbbd5d6dc548`](https://etherscan.io/nft/0x6912dfdb9cff40a20fd1c297374bcbbd5d6dc548/2) | ERC-1155 | The deflationary **fuel**. Burned to mint assets and to seal/move positions. |
 
