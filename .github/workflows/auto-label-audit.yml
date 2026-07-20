@@ -1,0 +1,30 @@
+name: Auto-label Audit Issues
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  issues: write
+
+jobs:
+  label-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label audit issues when title/body indicates an audit request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = context.payload.issue;
+            if (!issue) return;
+            const title = (issue.title || '').toLowerCase();
+            const body = (issue.body || '').toLowerCase();
+            const shouldLabel = title.startsWith('audit request') || title.includes('audit request') || body.includes('audit request') || body.includes('audit');
+            if (shouldLabel) {
+              await github.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: ['audit-request','security']
+              });
+            }

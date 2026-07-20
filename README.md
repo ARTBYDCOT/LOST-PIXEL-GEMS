@@ -11,6 +11,8 @@ Millions of pixels, mobilized and accumulated into forms that represent art — 
   <a href="https://x.com/DCOT15"><b>𝕏 @DCOT15</b></a>
 </p>
 
+<p align="center">[![Audit Requests](https://img.shields.io/badge/audit-request-open-blue)](https://github.com/ARTBYDCOT/LOST-PIXEL-GEMS/issues/new?labels=audit-request,security&template=audit_request.md)</p>
+
 ---
 
 ## What this is
