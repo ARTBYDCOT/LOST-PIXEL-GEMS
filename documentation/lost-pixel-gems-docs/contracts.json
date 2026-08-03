@@ -1,0 +1,42 @@
+{
+  "ecosystem": "Lost Pixel Gems",
+  "license": "CC0-1.0",
+  "registries": {
+    "erc8257ToolRegistry": { "address": "0x265BB2DBFC0A8165C9A1941Eb1372F349baD2cf1", "chains": [1, 8453] }
+  },
+  "agents": [
+    { "name": "Collector Tutor", "toolId": 114, "chainId": 1, "access": "free-holder-gated", "endpoint": "/api/tools/collector-tutor" },
+    { "name": "Pixel-Art Generator", "toolId": 115, "chainId": 1, "access": "hold>=100000 BOTTT", "endpoint": "/api/tools/pixel-art-mint" },
+    { "name": "Voxel Architect", "toolId": null, "chainId": 1, "access": "hold>=200000 BOTTT", "status": "in-training", "endpoint": "/api/tools/voxel-architect" }
+  ],
+  "creatorWallet": "0x843819E77947e2Ca4F198dFa9c32cF49b598EF4B",
+  "identity": { "collection": "0x3560dc18d27888de170acbc119442db3fdcf5ccf", "tokenId": 100 },
+  "contracts": [
+    { "name": "Lost Pixel Gems V1", "symbol": "LPG", "standard": "ERC-721", "chainId": 1, "address": "0xb52cD7A93878D823dF0fBc4F2E5a42f7b5B53A44" },
+    { "name": "Lost Pixel Gems V2", "symbol": "LPGNTRCTV", "standard": "ERC-721", "chainId": 1, "address": "0xb8698f54BEAd61D0C34e60Ab49d5AC992674f01B" },
+    { "name": "Lost Pixel Vox Land", "symbol": "LPVL", "standard": "ERC-721", "chainId": 1, "address": "0x75C3952A1CE57D259A5A66b57c3cae61C14bae52" },
+    { "name": "Lost Pixel Gems Resources (PIXEL)", "symbol": "LPGR", "standard": "ERC-721", "chainId": 1, "address": "0x6912dfdb9cff40a20fd1c297374bcbbd5d6dc548" },
+    { "name": "LPC-BOT", "symbol": "BOTTT", "standard": "ERC-721", "chainId": 1, "address": "0x3560dc18d27888de170acbc119442db3fdcf5ccf" },
+    { "name": "ABS.tract series", "symbol": "ABS", "standard": "ERC-721", "chainId": 1, "address": "0x848f15ba0a652b09438c9747e80304147d87aa0a" },
+    { "name": "Lost Pixel Gems Assets", "symbol": "LPGA", "standard": "ERC-721", "chainId": 1, "address": "0x50B4bb42cD9A2b981291b834dCba55Ec53b60a9b" },
+    { "name": "Lost Pixel Legacy", "symbol": "LPLART", "standard": "ERC-721", "chainId": 1, "address": "0x84198807972F196ED7D8b18B3B7A55B14237C0ea" },
+    { "name": "THE LOST PIXEL GEM", "symbol": "GEM", "standard": "ERC-721", "chainId": 1, "address": "0x1214f9dc859cd1495607a6188b2d4050e5bc287b", "mint": "2026-08-14", "supply": 10000 },
+    { "name": "$BOTTT token", "symbol": "BOTTT", "standard": "ERC-20", "chainId": 1, "address": "0xf95f39bef92a8f6b9b8d430d6c1aaaf2a9913d75", "decimals": 18, "notes": "EIP-2612 permit; transfer-gated (hold-to-access); Uniswap V4" },
+    { "name": "Voxel Map Genesis Map 1", "symbol": "MAP", "standard": "Protocol", "chainId": 1, "address": "0x5134f5df64c2b62a70Bcb5A96e1B8Cbf6C6B7dad3" },
+    { "name": "LostPixelPool", "symbol": "LPP", "standard": "ERC-20/721", "chainId": 1, "address": "0xF364c3F723C98dB51679a44e2871367Ce630FCfF" },
+    { "name": "Streaming Pixels", "symbol": "SPIXELS", "standard": "ERC-1155", "chainId": 1, "address": "0xeBD9ab3fbFB38F8db0C7caaC343382bae08FA5f1" },
+    { "name": "Lands Extension (deprecated)", "standard": "tokenURI-ext", "chainId": 1, "address": "0x168d4e05606d61f070dd7ccced9cc5a53a0d1189" },
+    { "name": "Physical burn NFT", "standard": "ERC-721", "chainId": 1, "address": "0xa02d8c83cac62f865f4f62ac0645b2be5a29b35f" },
+    { "name": "Lost Pixel Gems (Base)", "symbol": "LPGBA", "standard": "ERC-721", "chainId": 8453, "address": "0x77e95Bd2098BE1e75a1C36272b1e255F68358522" },
+    { "name": "Lost Pixel Gems Map 2 (Base)", "symbol": "MAP2", "standard": "Protocol", "chainId": 8453, "address": "0xe2bf4C47DE9876b8e55e352A05362caA2e1437A7" },
+    { "name": "Roulette 721 (Base)", "standard": "ERC-721", "chainId": 8453, "address": "0x9ebbfaf556f60439b7728c3335e916ce515cc7ef" },
+    { "name": "Roulette 1155 (Base)", "standard": "ERC-1155", "chainId": 8453, "address": "0x3e826375156bd45987599d3decd71508856dccb7" },
+    { "name": "Travelers", "standard": "ERC-721", "chainId": 8453, "address": "0xdc9430d36a30dfd732c16c63238b31c5a84fd98e" },
+    { "name": "LPC Residents", "standard": "ERC-721", "chainId": 8453, "address": "0x718eb4067ea4c8f0eae0b7f7beeaeef463b73d4f" },
+    { "name": "Mutant Lost Pixel City", "standard": "ERC-721", "chainId": 8453, "address": "0xb458397525ac01fc4b4a2fca8470121621c21c66" },
+    { "name": "DANKGEN series", "standard": "ERC-721", "chainId": 8453, "address": "0x5458df6631d4c1061f6a3755b74e482bd96f5226" },
+    { "name": "RE-BURN", "standard": "ERC-721", "chainId": 8453, "address": "0xe9043dd09da79c23307613655fce2003191e9b18" },
+    { "name": "Lost Pixel City V1", "standard": "ERC-721", "chainId": 1, "address": "0xc3e18e0c5e373dbee63a35d0cdf3acb92cb7a0e5" },
+    { "name": "Lost Pixel City DAO", "standard": "ERC-721", "chainId": 1, "address": "0xa11493d5799d8cbaa52b567e45588f617df18d0f" }
+  ]
+}

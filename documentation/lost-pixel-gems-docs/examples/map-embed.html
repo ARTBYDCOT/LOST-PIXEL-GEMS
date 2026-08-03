@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost Pixel — On‑chain Map Embed</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#06060e;font-family:system-ui,sans-serif;color:#cfe}
+  #c{display:block;width:100%;height:100%}
+  #hud{position:fixed;left:8px;top:8px;z-index:5;background:rgba(8,8,20,.72);border:1px solid #2a2a5a;border-radius:8px;padding:6px 9px;font-size:11px;line-height:1.5;pointer-events:none}
+  #hud b{color:#39f0ff}
+  .ax{position:fixed;bottom:8px;left:8px;font-size:10px;color:#8a8ac0;z-index:5}
+  a{color:#39f0ff}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud"></div>
+<div class="ax">🟥 X (E‑W) · 🟩 Y (up) · 🟦 Z (N‑S) — <b>open‑source on‑chain map</b> · CC0</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ============================================================================
+   Lost Pixel — embeddable on-chain map viewer.
+   URL params:  x,y,z (region origin) · w,h,d (region size) · map (contract) · chain
+                voxels=<url> (optional JSON [{x,y,z,hex}] read from chain)
+   postMessage: -> {type:'lpc-map:ready', region} , {type:'lpc-map:click', voxel}
+                <- {type:'lpc-map:setRegion', region:{x,y,z,w,h,d}}
+   Everything is CC0. Read a region on-chain and pass it via ?voxels= or your own decoder.
+   ========================================================================== */
+const q = new URLSearchParams(location.search);
+const num = (k,def)=>{ const v=parseInt(q.get(k),10); return isNaN(v)?def:v; };
+let region = { x:num('x',0), y:num('y',0), z:num('z',0), w:num('w',48), h:num('h',32), d:num('d',48) };
+const MAP = q.get('map')||'0x5134f5df64c2b62a70Bcb5A96e1B8Cbf6C6B7dad3';
+const CHAIN = q.get('chain')||'1';
+
+const cvs=document.getElementById('c');
+const renderer=new THREE.WebGLRenderer({canvas:cvs,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5)); renderer.setSize(innerWidth,innerHeight);
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0x06060e);
+const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,5000);
+scene.add(new THREE.AmbientLight(0x8899cc,0.8));
+const key=new THREE.PointLight(0xffffff,0.7,0); key.position.set(50,80,50); scene.add(key);
+
+let regionGroup=null, voxGroup=null, dragCam={az:0.7,el:0.5,r:0};
+function hud(){ document.getElementById('hud').innerHTML =
+  '<b>Region</b> origin ('+region.x+', '+region.y+', '+region.z+') · size '+region.w+'×'+region.h+'×'+region.d+'<br>'+
+  'map <b>'+MAP.slice(0,10)+'…</b> · chain '+CHAIN; }
+
+function buildRegion(){
+  if(regionGroup) scene.remove(regionGroup);
+  regionGroup=new THREE.Group();
+  const {w,h,d}=region;
+  // wireframe capture box
+  const box=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(w,h,d)),
+    new THREE.LineBasicMaterial({color:0x39f0ff}));
+  box.position.set(w/2,h/2,d/2); regionGroup.add(box);
+  // floor grid inside region
+  const grid=new THREE.GridHelper(Math.max(w,d),Math.max(w,d),0x2a2a5a,0x161636);
+  grid.position.set(w/2,0,d/2); regionGroup.add(grid);
+  // triad axes at origin
+  const ax=(dir,col,len)=>{ const g=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),dir.clone().multiplyScalar(len)]);
+    regionGroup.add(new THREE.Line(g,new THREE.LineBasicMaterial({color:col}))); };
+  ax(new THREE.Vector3(1,0,0),0xff5470,w*0.6); ax(new THREE.Vector3(0,1,0),0x7cf29a,h*0.9); ax(new THREE.Vector3(0,0,1),0x39f0ff,d*0.6);
+  scene.add(regionGroup);
+  dragCam.r = Math.max(w,h,d)*1.8;
+  camera.lookAt(w/2,h/2,d/2);
+  hud();
+}
+
+function drawVoxels(vox){
+  if(voxGroup) scene.remove(voxGroup);
+  voxGroup=new THREE.Group();
+  const geo=new THREE.BoxGeometry(1,1,1);
+  const byColor={};
+  vox.forEach(v=>{ const c=(v[3]||v.hex||'#39f0ff'); (byColor[c]=byColor[c]||[]).push(v); });
+  Object.keys(byColor).forEach(c=>{
+    const arr=byColor[c]; const mesh=new THREE.InstancedMesh(geo,new THREE.MeshLambertMaterial({color:c}),arr.length);
+    const m=new THREE.Matrix4();
+    arr.forEach((v,i)=>{ const x=v[0]!=null?v[0]:v.x, y=v[1]!=null?v[1]:v.y, z=v[2]!=null?v[2]:v.z;
+      m.setPosition(x+0.5,y+0.5,z+0.5); mesh.setMatrixAt(i,m); });
+    mesh.instanceMatrix.needsUpdate=true; voxGroup.add(mesh);
+  });
+  scene.add(voxGroup);
+}
+
+// optional: load region voxels from a JSON URL (you read them on-chain and expose them)
+const vurl=q.get('voxels');
+if(vurl){ fetch(vurl).then(r=>r.json()).then(d=>{ const arr=Array.isArray(d)?d:(d.vox||d.voxels||[]); if(arr.length) drawVoxels(arr); }).catch(()=>{}); }
+
+buildRegion();
+
+// simple orbit
+let down=false,px=0,py=0;
+cvs.addEventListener('pointerdown',e=>{down=true;px=e.clientX;py=e.clientY;});
+addEventListener('pointerup',()=>down=false);
+addEventListener('pointermove',e=>{ if(!down)return; dragCam.az-=(e.clientX-px)*0.005; dragCam.el=Math.max(0.05,Math.min(1.5,dragCam.el+(e.clientY-py)*0.005)); px=e.clientX;py=e.clientY; });
+cvs.addEventListener('wheel',e=>{ dragCam.r=Math.max(4,dragCam.r*(1+Math.sign(e.deltaY)*0.08)); e.preventDefault(); },{passive:false});
+
+function loop(){ requestAnimationFrame(loop);
+  const {w,h,d}=region, cx=w/2,cy=h/2,cz=d/2, r=dragCam.r;
+  camera.position.set(cx+r*Math.sin(dragCam.az)*Math.cos(dragCam.el), cy+r*Math.sin(dragCam.el), cz+r*Math.cos(dragCam.az)*Math.cos(dragCam.el));
+  camera.lookAt(cx,cy,cz);
+  renderer.render(scene,camera);
+}
+loop();
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+
+// postMessage API
+addEventListener('message',e=>{ const m=e.data||{}; if(m.type==='lpc-map:setRegion'&&m.region){ region=Object.assign(region,m.region); buildRegion(); }
+  if(m.type==='lpc-map:setVoxels'&&Array.isArray(m.voxels)){ drawVoxels(m.voxels); } });
+try{ parent.postMessage({type:'lpc-map:ready',region,map:MAP,chain:CHAIN},'*'); }catch(e){}
+</script>
+</body>
+</html>

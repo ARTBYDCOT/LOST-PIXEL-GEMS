@@ -1,39 +1,24 @@
-# Contributing to Lost Pixel Gems
+# Contributing
 
-Lost Pixel Gems is **open public art and open code**. This repository is deliberately **open to audits and to code contribution** — especially for **developing and hardening the on-chain contracts** (PIXELS token, voxel-LAND mint, on-chain map archive).
-
-Art is by **D.C.O.T. and anyone who contributes.** The same spirit applies to the code.
+Everything here is **CC0** — public domain. You can fork, remix, and ship without asking.
 
 ## Ways to contribute
+- **Build on the open map.** Read a region on‑chain and embed it (see [docs/MAP.md](./docs/MAP.md)). Share what you make.
+- **Write a decoder.** Region/voxel RLE decoders in any language are welcome.
+- **Add code examples.** More stacks (Rust/alloy, Go, Swift) in [docs/CODE-EXAMPLES.md](./docs/CODE-EXAMPLES.md).
+- **Build an ERC‑8257 tool** for the ecosystem and register it (see [docs/AGENTS.md](./docs/AGENTS.md)).
+- **Improve docs.** Fixes, clarifications, diagrams.
 
-| Track | What | Where |
-|---|---|---|
-| **Contracts** | Design/implement/audit the PIXELS burn-to-mint, LAND, and on-chain voxel archive contracts | `contracts/`, [docs/CONTRACTS.md](docs/CONTRACTS.md) |
-| **Security audits** | Review contracts & the map API for vulnerabilities | see [SECURITY.md](SECURITY.md) |
-| **Apps / tools** | Editor, viewers, map, UX, mobile | `web/` |
-| **Docs / economy** | Refine the deflationary model, tables, diagrams | `docs/` |
-| **Art pipeline** | `.vox` → optimized web meshes | `docs/ASSETS.md` |
+## Ground rules
+- Keep it **on‑chain and host‑agnostic** — no manual `.htaccess`, no hard‑coded hosts in front‑ends; read galleries from chain.
+- **No secrets in client code.** All signing is user‑side.
+- **Verify addresses** against [docs/CONTRACTS.md](./docs/CONTRACTS.md) before wiring anything.
+- License your contribution as **CC0** to match the repo.
 
-## On-chain contract development (priority)
+## Dev pointers
+- Contracts registry (machine‑readable): [`contracts.json`](./contracts.json).
+- Agent gateway API: [docs/API.md](./docs/API.md).
+- Wallet/signing: [docs/WALLET.md](./docs/WALLET.md).
 
-The economy in [docs/ECONOMY.md](docs/ECONOMY.md) is a **framework awaiting deployed contracts**. We welcome PRs and audits for:
-
-1. **PIXELS (ERC-20)** — fixed supply, no post-genesis emission, burnable.
-2. **Voxel-LAND mint** — `mintVoxel(bytes voxelData) payable` style: **burns PIXELS ∝ voxel count**, mints the model NFT, records position.
-3. **On-chain map archive** — stores kept blocks + metadata so the map is **rebuildable from contract data alone** (server-independent).
-4. **Read-only exhibition** — a 6-word *signed* message grants *view-only* display of a wallet's NFTs; **never** a transfer/approval.
-
-**Ground rules for contract PRs**
-- Include tests (Foundry/Hardhat) and a short threat model.
-- No hidden mint/withdraw/owner backdoors — this is public art infrastructure.
-- Deflation must be **structural**: no faucet, no inflationary emission.
-- Prefer minimal, auditable code over cleverness.
-
-## How to open a PR
-1. Fork → branch (`feat/…`, `contracts/…`, `audit/…`).
-2. Keep it scoped; describe the *why*.
-3. For contracts: attach test output + gas notes.
-4. **Never commit** private data, keys, `.env`, databases, or wallet material.
-
-## Code of conduct
-Be constructive. This is a commons — build like others will build on top of you.
+## Reporting
+Open an issue with the contract/tool address, chain, tx hash (if any), and steps to reproduce.
