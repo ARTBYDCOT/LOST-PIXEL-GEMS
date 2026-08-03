@@ -67,7 +67,9 @@
                           "chainId":  1,
                           "address":  "0x75C3952A1CE57D259A5A66b57c3cae61C14bae52",
                           "verification_status":  "unverified",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "source_url":  "https://etherscan.io/address/0x75C3952A1CE57D259A5A66b57c3cae61C14bae52#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "Lost Pixel Gems Resources (PIXEL)",
@@ -111,8 +113,10 @@
                           "standard":  "ERC-721",
                           "chainId":  1,
                           "address":  "0x84198807972F196ED7D8b18B3B7A55B14237C0ea",
-                          "verification_status":  "unknown",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "verification_status":  "unverified",
+                          "source_url":  "https://etherscan.io/address/0x84198807972F196ED7D8b18B3B7A55B14237C0ea#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "THE LOST PIXEL GEM",
@@ -142,8 +146,10 @@
                           "standard":  "Protocol",
                           "chainId":  1,
                           "address":  "0x5134f5df64c2b62a70Bcb5A96e1B8Cbf6C6B7dad3",
-                          "verification_status":  "unknown",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "verification_status":  "invalid_address",
+                          "source_url":  "https://etherscan.io/address/0x5134f5df64c2b62a70Bcb5A96e1B8Cbf6C6B7dad3#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "LostPixelPool",
@@ -152,7 +158,9 @@
                           "chainId":  1,
                           "address":  "0xF364c3F723C98dB51679a44e2871367Ce630FCfF",
                           "verification_status":  "unverified",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "source_url":  "https://etherscan.io/address/0xF364c3F723C98dB51679a44e2871367Ce630FCfF#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "Streaming Pixels",
@@ -161,7 +169,9 @@
                           "chainId":  1,
                           "address":  "0xeBD9ab3fbFB38F8db0C7caaC343382bae08FA5f1",
                           "verification_status":  "unverified",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "source_url":  "https://etherscan.io/address/0xeBD9ab3fbFB38F8db0C7caaC343382bae08FA5f1#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "Lands Extension (deprecated)",
@@ -169,7 +179,9 @@
                           "chainId":  1,
                           "address":  "0x168d4e05606d61f070dd7ccced9cc5a53a0d1189",
                           "verification_status":  "unverified",
-                          "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                          "source_url":  "https://etherscan.io/address/0x168d4e05606d61f070dd7ccced9cc5a53a0d1189#code",
+                          "last_checked":  "2026-08-03T10:22:46.137-05:00",
+                          "check_method":  "best-effort-web-scan"
                       },
                       {
                           "name":  "Physical burn NFT",
