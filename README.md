@@ -1,5 +1,5 @@
 <!-- Lost Pixel Gems — open-source public voxel-art metaverse -->
-<h1 align="center">◊ Lost Pixel Gems (LPG)</h1>
+<h1 align="center">◊ LOST PIXEL GEMS (LPG)</h1>
 <p align="center"><b>Virtual worlds & multi-experience voxel art — fully on-chain, open source.</b><br>
 Millions of pixels, mobilized and accumulated into forms that represent art — created by <b>D.C.O.T. and anyone who wants to contribute.</b></p>
 
