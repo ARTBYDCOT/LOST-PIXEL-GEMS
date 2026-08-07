@@ -280,6 +280,50 @@
                           "address":  "0xa11493d5799d8cbaa52b567e45588f617df18d0f",
                           "verification_status":  "EOA",
                           "last_checked":  "2026-08-03T10:13:51.880-05:00"
+                      },
+                      {
+                          "name":  "PIXELGEMS",
+                          "symbol":  "PIXELGEMS",
+                          "standard":  "ERC-721",
+                          "chainId":  1,
+                          "address":  "0x3970435717de610087D7dA9203aA145580655388",
+                          "verification_status":  "unverified",
+                          "source_url":  "https://etherscan.io/address/0x3970435717de610087D7dA9203aA145580655388#code",
+                          "last_checked":  "2026-08-07T17:42:05.802-05:00",
+                          "check_method":  "added-from-PROTOCOL-10K"
+                      },
+                      {
+                          "name":  "POOLGEMS",
+                          "symbol":  "POOLGEMS",
+                          "standard":  "Controller/Pool",
+                          "chainId":  1,
+                          "address":  "0x74b3AEA764A7a51a0BC20E031C46eD93f9aDf51B",
+                          "verification_status":  "unverified",
+                          "source_url":  "https://etherscan.io/address/0x74b3AEA764A7a51a0BC20E031C46eD93f9aDf51B#code",
+                          "last_checked":  "2026-08-07T17:42:05.802-05:00",
+                          "check_method":  "added-from-PROTOCOL-10K"
+                      },
+                      {
+                          "name":  "PixelsShop",
+                          "symbol":  "PIXELSHOP",
+                          "standard":  "Service",
+                          "chainId":  1,
+                          "address":  "0x1e029d8d9Ebb7d8C74b6482f1b4109eEa872E832",
+                          "verification_status":  "unverified",
+                          "source_url":  "https://etherscan.io/address/0x1e029d8d9Ebb7d8C74b6482f1b4109eEa872E832#code",
+                          "last_checked":  "2026-08-07T17:42:05.802-05:00",
+                          "check_method":  "added-from-PROTOCOL-10K"
+                      },
+                      {
+                          "name":  "AuctionHouse",
+                          "symbol":  "AUCTION",
+                          "standard":  "AuctionHouse",
+                          "chainId":  1,
+                          "address":  "0xbf9ce508802ec90ebd32a9fd716a6e6b3cf34254",
+                          "verification_status":  "unverified",
+                          "source_url":  "https://etherscan.io/address/0xbf9ce508802ec90ebd32a9fd716a6e6b3cf34254#code",
+                          "last_checked":  "2026-08-07T17:42:05.802-05:00",
+                          "check_method":  "added-from-PROTOCOL-10K"
                       }
                   ],
     "creatorWallet_verification":  "EOA",
