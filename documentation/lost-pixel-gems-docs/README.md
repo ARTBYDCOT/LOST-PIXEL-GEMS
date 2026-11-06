@@ -4,9 +4,21 @@
 
 **A fully on‑chain pixel‑art / voxel NFT universe by [D.C.O.T.](https://www.dcot.space) — with a 3‑in‑1 on‑chain AI agent (LPC‑BOT) built on OpenSea's ERC‑8257 tool standard.**
 
-`lpc-bot.art` · `lostpixelgems.space` · CC0
+`lpc-bot.art` · `lostpixelgems.space` · `lostpixelgems.fun` · CC0
 
 </div>
+
+---
+
+## Latest ecosystem update (2026-11-06)
+
+The Lost Pixel ecosystem is now understood as a connected three-property system:
+
+- **lostpixelgems.space** — creative engine and on-chain galleries
+- **lostpixelgems.fun** — $LPCG playground and mutation lab
+- **lpc-bot.art** — agent layer, brain, registry, and on-chain tool ecosystem
+
+This public reference remains aligned with the latest contracts, collections and on-chain agent architecture. See the [ecosystem update guide](../../docs/ECOSYSTEM-UPDATE.md).
 
 ---
 

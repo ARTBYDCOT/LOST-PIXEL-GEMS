@@ -5,6 +5,8 @@ Millions of pixels, mobilized and accumulated into forms that represent art — 
 
 <p align="center"><i>Burn PIXELS → mint voxel worlds → build one shared 8,000,000-voxel micro-universe that lives forever on-chain.</i></p>
 
+<p align="center"><b>Latest ecosystem update (2026-11-06):</b> <a href="https://lostpixelgems.space/">lostpixelgems.space</a> · <a href="https://lostpixelgems.fun/">lostpixelgems.fun</a> · <a href="https://lpc-bot.art/">lpc-bot.art</a></p>
+
 <p align="center">
   <a href="https://lostpixelgems.space/"><b>🌐 Project — lostpixelgems.space</b></a> ·
   <a href="https://dcot.space/"><b>🎨 Portfolio — D.C.O.T.</b></a> ·
@@ -37,7 +39,7 @@ This repository is the **open-source reference** — every app, page, the smart-
 
 ## Table of contents
 - [**GENESIS — the illustrated publication**](GENESIS.md) · [**Manifesto & vision**](documentation/lost-pixel-gems-docs/docs/02-conceptos/MANIFESTO.md) · [**R3 — origin**](documentation/lost-pixel-gems-docs/docs/02-conceptos/ORIGIN.md)
-- [Vision](#vision) · [Architecture](documentation/lost-pixel-gems-docs/docs/02-conceptos/ARCHITECTURE.md) · [The apps & pages](documentation/lost-pixel-gems-docs/docs/02-conceptos/APPS.md)
+- [Ecosystem update (2026-11-06)](docs/ECOSYSTEM-UPDATE.md) · [Vision](#vision) · [Architecture](documentation/lost-pixel-gems-docs/docs/02-conceptos/ARCHITECTURE.md) · [The apps & pages](documentation/lost-pixel-gems-docs/docs/02-conceptos/APPS.md)
 - [**🌐 Web3 Protocol & How to Participate**](WEB3-PROTOCOL.md) · [**Creation tools** (free — edit & animate)](documentation/lost-pixel-gems-docs/docs/01-guias/TOOLS.md)
 - [**Functions, limits & comparison**](documentation/lost-pixel-gems-docs/docs/02-conceptos/COMPARISON.md) · [**Public math & code**](documentation/lost-pixel-gems-docs/docs/02-conceptos/TECHNICAL.md)
 - [Economic model (deflationary PIXELS burn)](documentation/lost-pixel-gems-docs/docs/02-conceptos/ECONOMY.md) · [**Collections: distribution, launch & burns**](documentation/lost-pixel-gems-docs/docs/01-guias/DISTRIBUTION.md)

@@ -1,6 +1,36 @@
 {
     "ecosystem":  "Lost Pixel Gems",
+    "updated_at":  "2026-11-06T00:00:00Z",
     "license":  "CC0-1.0",
+    "properties":  [
+                       {
+                           "name":  "Lost Pixel Gems",
+                           "domain":  "https://lostpixelgems.space",
+                           "role":  "Creative engine and on-chain galleries",
+                           "chains":  [
+                                          1,
+                                          8453,
+                                          4663
+                                      ]
+                       },
+                       {
+                           "name":  "Lost Pixel Gems FUN",
+                           "domain":  "https://lostpixelgems.fun",
+                           "role":  "LPCG playground and mutation lab",
+                           "chains":  [
+                                          4663
+                                      ]
+                       },
+                       {
+                           "name":  "LPC-BOT",
+                           "domain":  "https://lpc-bot.art",
+                           "role":  "Agent layer and tool registry",
+                           "chains":  [
+                                          1,
+                                          8453
+                                      ]
+                       }
+                   ],
     "registries":  {
                        "erc8257ToolRegistry":  {
                                                    "address":  "0x265BB2DBFC0A8165C9A1941Eb1372F349baD2cf1",
